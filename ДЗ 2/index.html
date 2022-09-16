@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>jQuery UI Draggable - Default functionality</title>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <style>
+
+  #draggable, #draggable2, #droppable #droppable2 { width: 150px; height: 150px; padding: 0.5em; }
+
+  #droppable {
+
+    padding: 30px;
+
+    position: absolute;
+
+    left: 50px;
+
+    z-index: -100;
+
+  }
+
+  #droppable2{
+    
+    padding: 30px;
+
+  position: absolute;
+  left: 350px;
+
+  z-index: -100;
+  }
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+
+  $( function() {
+
+    $( "#draggable" ).draggable({ revert: "invalid" });
+    $( "#draggable2" ).draggable({ revert: "invalid" });
+
+   
+   
+
+   
+
+
+    $('#droppable').droppable({
+
+        classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" );
+            
+      }
+    
+});
+
+    $('#droppable2').droppable({
+        
+        classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+        },
+
+        
+     
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" );
+            
+      }
+   
+     
+    
+});
+
+
+     
+
+    
+    
+
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+
+ 
+
+<div id="draggable" class="elem ui-widget-content">
+
+  <p> HTML </p>
+
+</div>
+
+
+<div id="draggable2" class="elem ui-widget-content">
+
+    <p> CSS </p>
+
+</div>
+
+
+<div id="droppable" class="elem ui-widget-header">
+
+    <p>Мова розмітки гіпертексту </p>
+
+</div>
+
+<div id="droppable2" class="elem ui-widget-header">
+
+  <p> Каскадні таблиці стилів</p>
+
+</div>
+
+ 
+
+</body>
+
+</html>
